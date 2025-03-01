@@ -1,0 +1,39 @@
+{
+  "channels": [
+    {
+      "id": 1,
+      "name": "Basic Pack",
+      "category": "entertainment"
+    },
+    {
+      "id": "c4be",
+      "name": "sai sampath",
+      "category": "sports"
+    },
+    {
+      "id": "5c04",
+      "name": "sai prakash",
+      "category": "sports"
+    },
+    {
+      "id": "bc92",
+      "name": "sai sampath",
+      "category": "sports"
+    },
+    {
+      "id": "6632",
+      "name": "sai sampath",
+      "category": "ent"
+    },
+    {
+      "id": "63c5",
+      "name": "hello",
+      "category": "news"
+    },
+    {
+      "id": "a130",
+      "name": "sai prakash",
+      "category": "ent"
+    }
+  ]
+}
