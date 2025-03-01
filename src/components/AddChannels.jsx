@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getChannels, postChannel } from "../ApiCalls/apiCall";
+import { delChannel, getChannels, postChannel } from "../ApiCalls/apiCall";
 
 const AddChannels = () => {
 
@@ -9,11 +9,15 @@ const AddChannels = () => {
 
   const [channels, setChannels] = useState([]);
 
-  useEffect(() => {
+  const loadChannels = () => {
     getChannels()
       .then(res => res.json())
       .then(data => setChannels(data))
       .catch(e => console.log(e));
+  }
+
+  useEffect(() => {
+    loadChannels();
   }, [])
 
   const handleSubmit = async (e) => {
@@ -25,6 +29,12 @@ const AddChannels = () => {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  const del = (id) => {
+    delChannel(id).then(() => {
+      loadChannels();
+    })
   }
 
   return (
@@ -70,13 +80,14 @@ const AddChannels = () => {
                   <td>{channel.name}</td>
                   <td>{channel.category}</td>
                   <td></td>
+                  <td><button><i className="bi bi-trash" onDoubleClick={() => del(channel.id)}></i></button></td>
                 </tr>
               ))
             }
           </tbody>
         </table>
       </div>
-    </div>
+    </div >
   );
 };
 
