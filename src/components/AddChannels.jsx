@@ -7,6 +7,7 @@ const AddChannels = () => {
   const [channel, setChannel] = useState("");
   const [cat, setCat] = useState(0);
 
+  const [price, setPrice] = useState(0);
   const [channels, setChannels] = useState([]);
 
   const loadChannels = () => {
@@ -23,7 +24,7 @@ const AddChannels = () => {
   const handleSubmit = async (e) => {
     console.log("submitting");
     try {
-      const response = await postChannel({ name: channel, category: cat });
+      const response = await postChannel({ name: channel, category: cat, price });
       const data = await response.data;
       setChannels(await data);
     } catch (e) {
@@ -48,6 +49,10 @@ const AddChannels = () => {
               <input type="text" className="form-control" id="channelName" value={channel} onChange={(e) => setChannel(e.target.value)} />
             </div>
             <div className="mb-3">
+              <label htmlFor="channelPrice" className="form-label">Price</label>
+              <input type="number" className="form-control" id="channelPrice" value={price} onChange={(e) => setPrice(e.target.value)} />
+            </div>
+            <div className="mb-3">
               <label htmlFor="channelCategory" className="form-label">Category</label>
               <select className="form-select" id="channelCategory" onChange={(e) => setCat(e.target.value)}>
                 <option value="">Select Category</option>
@@ -63,6 +68,11 @@ const AddChannels = () => {
       </div>
       <h3 className='text-center mt-5 mb-5'>Channels</h3>
       <div className=''>
+            {
+          channels.length === 0 && <h5 className='text-center text-danger'>No Channels Found</h5>
+        }
+            {
+              channels.length > 0 &&
         <table className="table">
           <thead>
             <tr>
@@ -74,18 +84,19 @@ const AddChannels = () => {
           </thead>
           <tbody>
             {
-              channels?.map(channel => (
+              channels.map(channel => (
                 <tr key={channel.id}>
                   <th scope="row">{channel.id}</th>
                   <td>{channel.name}</td>
                   <td>{channel.category}</td>
-                  <td></td>
+                  <td>{channel.price}</td>
                   <td><button><i className="bi bi-trash" onDoubleClick={() => del(channel.id)}></i></button></td>
                 </tr>
               ))
             }
           </tbody>
         </table>
+            }
       </div>
     </div >
   );
