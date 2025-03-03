@@ -4,7 +4,7 @@ import { postPlan, getPlans, delPlan } from '../ApiCalls/PlansAPICalls';
 const AddPlans = () => {
 
   const [planName, setPlanName] = useState(null);
-  const [plans, setPlans] = useState(null);
+  const [plans, setPlans] = useState([]);
   const [price, setPrice] = useState(null);
   const [planDuration, setDuration] = useState(null);
 
@@ -65,8 +65,14 @@ const AddPlans = () => {
           </form>
         </div>
       </div>
-      <h3 className='text-center mt-5 mb-5'>Channels</h3>
+      <h3 className='text-center mt-5 mb-5'>Plans</h3>
       <div className=''>
+        {
+          plans.length===0 && <h5 className='text-center text-danger'>No Plans Found</h5>
+        }
+        {
+          plans.length>0 &&
+        
         <table className="table">
           <thead>
             <tr>
@@ -83,13 +89,14 @@ const AddPlans = () => {
                   <th scope="row">{plan.id}</th>
                   <td>{plan.name}</td>
                   <td>{plan.duration}</td>
-                  <td></td>
+                  <td>{plan.price}</td>
                   <td><button><i className="bi bi-trash" onDoubleClick={() => del(plan.id)}></i></button></td>
                 </tr>
               ))
             }
           </tbody>
         </table>
+}
       </div>
     </div>
   );

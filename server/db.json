@@ -1,41 +1,4 @@
 {
-  "channels": [
-    {
-      "id": "c27c",
-      "name": "sai prakash",
-      "category": "sports"
-    }
-  ],
-  "plans": [
-    {
-      "id": "3901",
-      "name": "sampath",
-      "duration": "1",
-      "price": "19"
-    },
-    {
-      "id": "a29e",
-      "name": "sampath",
-      "duration": "1",
-      "price": "19"
-    },
-    {
-      "id": "c9a0",
-      "name": "sampath",
-      "duration": "1",
-      "price": "18"
-    },
-    {
-      "id": "d741",
-      "name": "sampath",
-      "duration": "1",
-      "price": "10"
-    },
-    {
-      "id": "e078",
-      "name": "sampath",
-      "duration": "3",
-      "price": "17"
-    }
-  ]
+  "channels": [],
+  "plans": []
 }
