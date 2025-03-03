@@ -1,4 +1,11 @@
 {
   "channels": [],
-  "plans": []
+  "plans": [
+    {
+      "id": "9a23",
+      "name": "ewer",
+      "duration": "3",
+      "price": "1000"
+    }
+  ]
 }
