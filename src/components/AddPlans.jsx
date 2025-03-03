@@ -61,7 +61,7 @@ const AddPlans = () => {
                 <option value="12">12 Months</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-primary">Add Price</button>
+            <button type="submit" className="btn btn-primary">Add Plans</button>
           </form>
         </div>
       </div>
