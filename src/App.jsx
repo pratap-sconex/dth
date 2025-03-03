@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AddChannels from './components/AddChannels';
-import AddPrice from './components/AddPrice';
+import AddPlans from './components/AddPlans';
 import DisplayPlans from './components/DisplayPlans';
 import FindPlans from './components/FindPlans';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/add-channels" element={<AddChannels />} />
-          <Route path="/add-price" element={<AddPrice />} />
+          <Route path="/add-plans" element={<AddPlans />} />
           <Route path="/display-plans" element={<DisplayPlans />} />
           <Route path="/find-plans" element={<FindPlans />} />
           <Route path="/" element={<DisplayPlans />} />
